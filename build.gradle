@@ -1,0 +1,40 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+group 'com.xero'
+version '1.0-SNAPSHOT'
+
+ext {
+    seleniumVersion = '3.+'
+    junitVersion = '4.12'
+    appiumVersion = '7.+'
+    guiceVersion = '4.1.0'
+    assertVersion= '3.4.1'
+    slf4jVersion='1.7.25'
+    logbackVersion='1.2.3'
+}
+
+test {
+    systemProperty 'browserName', System.getProperty('browserName')
+    systemProperty 'webdriver.chrome.driver', System.getProperty('webdriver.chrome.driver')
+    systemProperty 'webdriver.gecko.driver', System.getProperty('webdriver.gecko.driver')
+    systemProperty 'targetAppURL', System.getProperty('targetAppURL')
+}
+
+test.onlyIf {
+    Boolean.getBoolean('run.test')
+}
+
+dependencies {
+    compile "junit:junit:${junitVersion}"
+    compile "org.seleniumhq.selenium:selenium-java:${seleniumVersion}"
+    compile "io.appium:java-client:${appiumVersion}"
+    compile "com.google.inject:guice:${guiceVersion}"
+    compile "org.assertj:assertj-core:${assertVersion}"
+    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+    compile "ch.qos.logback:logback-classic:${logbackVersion}"
+}
