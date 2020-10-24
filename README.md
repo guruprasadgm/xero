@@ -8,7 +8,7 @@ Note: * All the tests were created and tested on a Mac OS Mojave version 10.14.6
 pre-requesites
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-1. Clone the solution from following repo: 
+1. Clone the solution from following repo: https://github.com/guruprasadgm/xero
 
 2. Chrome browser Version 85 (Official Build) (64-bit) should be installed.
       ChromeDriver 74.0.3729.6 (already uploaded with the solution in case not able to download should be downloaded separately and location to be provided as mentioned below)
